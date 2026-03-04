@@ -1,0 +1,6 @@
+2026-03-04 16:40:20 error test LogFac error D:\code\src\test_class_xlog\test_class_xlog.cpp:28
+2026-03-04 16:40:20 fatal test LogFac fatal D:\code\src\test_class_xlog\test_class_xlog.cpp:29
+2026-03-04 16:40:46 debug test LogFac debug D:\code\src\test_class_xlog\test_class_xlog.cpp:26
+2026-03-04 16:40:46 info test LogFac info D:\code\src\test_class_xlog\test_class_xlog.cpp:27
+2026-03-04 16:40:46 error test LogFac error D:\code\src\test_class_xlog\test_class_xlog.cpp:28
+2026-03-04 16:40:46 fatal test LogFac fatal D:\code\src\test_class_xlog\test_class_xlog.cpp:29

@@ -1,0 +1,1 @@
+2026-03-04 10:54:10 debug test Logger D:\code\src\test_class_xlog\test_class_xlog.cpp:25
