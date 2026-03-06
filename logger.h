@@ -2,6 +2,7 @@
 #include <string>
 #include "log_format.h"
 #include "log_output.h"
+#include <memory>
 /// <summary>
 /// Composition
 /// Delegate LogFormat & LogOutput
@@ -32,18 +33,20 @@ public:
 		int line
 	);
 
-	void SetOutput(LogOutput* output) { output_ = output; }
-	void SetFormat(LogFormat* format) { formater_ = format; }
+	void SetOutput(std::unique_ptr<LogOutput> output) { output_ = move(output); }
+	void SetFormat(std::unique_ptr<LogFormat> format) { formater_ = move(format); }
 	~Logger()
 	{
-		delete output_; output_ = nullptr;
-		delete formater_; formater_ = nullptr;
+		//delete output_; output_ = nullptr;
+		//delete formater_; formater_ = nullptr;
 	}
 	void SetLevel(XLog level) { log_level_ = level; }
 
 private:
-	LogOutput* output_{ nullptr };
-	LogFormat* formater_{nullptr};
+	//LogOutput* output_{ nullptr };
+	//LogFormat* formater_{nullptr};
+	std::unique_ptr<LogOutput> output_;
+	std::unique_ptr<LogFormat> formater_;
 
 	// Set lowest log level
 	XLog log_level_{ XLog::DEBUG };

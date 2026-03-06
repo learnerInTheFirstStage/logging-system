@@ -10,7 +10,7 @@ using namespace std;
 
 void LogFac::init(const std::string& con_file)
 {
-	logger_.SetFormat(new XLogFormat());
+	logger_.SetFormat(make_unique<XLogFormat>());
 	XConfig conf;
 	bool re = conf.Read(con_file);
 	string log_type = "console";
@@ -43,12 +43,12 @@ void LogFac::init(const std::string& con_file)
 	if (log_type == "file")
 	{
 		if (log_file.empty()) log_file = LOGFILE;
-		auto fout = new LogFileOutput();
+		auto fout = make_unique<LogFileOutput>(); // new LogFileOutput();
 		if (!fout->Open(log_file)) cerr << "Open file filed " << log_file << endl;
-		logger_.SetOutput(fout);
+		logger_.SetOutput(move(fout));
 	}
 	else {
-		logger_.SetOutput(new LogConsoleOutput());
+		logger_.SetOutput(make_unique<LogConsoleOutput>());
 	}
 	
 }

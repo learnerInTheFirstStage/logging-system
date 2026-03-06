@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="test_class_xlog.vcxproj" />
+  <Project Path="test_class_xlog.vcxproj" Id="424d7dd7-8062-4eeb-87e7-8b4a4e04866b" />
 </Solution>

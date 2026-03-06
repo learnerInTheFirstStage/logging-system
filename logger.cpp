@@ -7,6 +7,7 @@ void Logger::Write(
 	int line
 )
 {
+	if (!formater_ || !output_) return;
 	if (level < log_level_) return;
 
 	// Convert log level into string type
